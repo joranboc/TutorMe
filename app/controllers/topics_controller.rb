@@ -4,11 +4,11 @@ class TopicsController < ApplicationController
         topics = subject.topics
         render json: topics
     end
-    def tutores
+    def tutors
         topic = Topic.find(params[:idTopic])
         cursos = topic.courses
-        tutores =  cursos.map{|x| x.tutor}
-        final = {:topic => params[:idTopic],:tutores => tutores}
+        tutors =  cursos.map{|x| x.tutor}
+        final = {:topic => params[:idTopic],:tutors => tutors}
         puts final
         render json: final
     end

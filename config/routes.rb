@@ -5,5 +5,8 @@ Rails.application.routes.draw do
   get 'topics/:idSubject', to: 'topics#index'
   get 'subjects', to: 'subjects#index'
   
-  get 'topics/tutores/:idTopic', to: 'topics#tutores'
+  get 'topics/tutors/:idTopic', to: 'topics#tutors'
+  get 'tutors/:idTutor/courses/:idTopic', to: 'courses#show'
+  post 'tutors/:idTutor/courses', to: 'courses#create'
+  post 'students/:idStudent/courses/:idCourse', to: 'courses#register'
 end
