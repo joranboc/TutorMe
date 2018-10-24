@@ -3,8 +3,8 @@ class CoursesController < ApplicationController
     def show
         tutor = Tutor.find(params[:idTutor])
         courses = tutor.courses
-        curso = courses.select{|x| x.topic_id == 1}
-        render json: curso
+        course = courses.select{|x| x.topic_id == 1}
+        render json: course 
     end
 
     def create

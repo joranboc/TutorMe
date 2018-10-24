@@ -9,4 +9,6 @@ Rails.application.routes.draw do
   get 'tutors/:idTutor/courses/:idTopic', to: 'courses#show'
   post 'tutors/:idTutor/courses', to: 'courses#create'
   post 'students/:idStudent/courses/:idCourse', to: 'courses#register'
+  post 'students', to: 'students#create'
+  get 'students/:idStudent', to: 'students#show'
 end
