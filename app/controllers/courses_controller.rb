@@ -2,14 +2,16 @@ class CoursesController < ApplicationController
 
     def show
         tutor = Tutor.find(params[:idTutor])
+        topic = Topic.find(params[:idTopic])
         courses = tutor.courses
-        curso = courses.select{|x| x.topic_id == 1}
+        curso = courses.select{|x| x.topic_id == topic.id }
         render json: curso
     end
 
     def create
         tutor = Tutor.find(params[:idTutor])
         course = Course.create(params.permit(:status,:price,:topic_id).merge :tutor_id => tutor.id)
+        
         render json: tutor.courses
 
     end

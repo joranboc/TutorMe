@@ -12,5 +12,10 @@ class TopicsController < ApplicationController
         puts final
         render json: final
     end
+    def create
+        subject = Subject.find(params[:idSubject])
+        topic = Topic.create(params.permit(:name).merge :subject_id => subject.id)
+        render json: topic
+    end
 
 end
