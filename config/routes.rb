@@ -24,5 +24,7 @@ Rails.application.routes.draw do
   post 'tutors', to: 'tutors#create'
   #Actualizar curso
   post 'courses/:idCourse', to: 'courses#update'
+  #Actualizar tutor
+  post 'tutors/:idTutor', to: 'tutors#update'
 
 end
