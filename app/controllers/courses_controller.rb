@@ -22,4 +22,9 @@ class CoursesController < ApplicationController
         course.students << student
         render json: student.courses
     end
+    def update
+        course = Course.find(params[:idCourse])
+        course.update(params.permit(:status,:price))
+        render json: course
+    end
 end
