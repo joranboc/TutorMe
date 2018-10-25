@@ -18,6 +18,8 @@ Rails.application.routes.draw do
   post 'students', to: 'students#create'
   #Mostrar un estudiante
   get 'students/:idStudent', to: 'students#show'
+  #Actualizar estudiante
+  post 'students/:idStudent', to: 'students#update'
   #Crear un tema
   post 'subjects/:idSubject/topics', to: 'topics#create'
   #Crear un tutor

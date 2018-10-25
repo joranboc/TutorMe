@@ -9,5 +9,10 @@ class StudentsController < ApplicationController
         render json: student
     end
 
+    def update
+        student = Student.find(params[:idStudent])
+        student.update(params.permit(:name, :mail, :birthDate, :carreer, :password))
+        render json: student
+    end
 
 end
