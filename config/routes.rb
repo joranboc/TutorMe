@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   #Obtener todas las materias
   get 'subjects', to: 'subjects#index'
 
-
+  #Ruta para obtener tutores de un tema especifico
   get 'topics/tutors/:idTopic', to: 'topics#tutors'
   get 'tutors/:idTutor/courses/:idTopic', to: 'courses#show'
   post 'tutors/:idTutor/courses', to: 'courses#create'
@@ -15,6 +15,6 @@ Rails.application.routes.draw do
   get 'students/:idStudent', to: 'students#show'
   post 'subject/:idSubject/topics', to: 'topics#create'
   post 'tutors', to: 'tutors#create'
-  
+
 
 end
