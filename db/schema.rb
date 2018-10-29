@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20181024153420) do
+ActiveRecord::Schema.define(version: 20181029163340) do
 
   create_table "chats", force: :cascade do |t|
     t.text "message"
@@ -42,12 +42,12 @@ ActiveRecord::Schema.define(version: 20181024153420) do
 
   create_table "students", force: :cascade do |t|
     t.string "name"
-    t.string "mail"
     t.date "birthDate"
     t.string "carreer"
-    t.string "password"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "user_id"
+    t.index ["user_id"], name: "index_students_on_user_id"
   end
 
   create_table "subjects", force: :cascade do |t|
@@ -67,10 +67,17 @@ ActiveRecord::Schema.define(version: 20181024153420) do
   create_table "tutors", force: :cascade do |t|
     t.string "name"
     t.text "skill"
-    t.string "mail"
     t.string "career"
-    t.string "password"
     t.date "birthDate"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "user_id"
+    t.index ["user_id"], name: "index_tutors_on_user_id"
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "email"
+    t.string "password_digest"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
