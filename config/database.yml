@@ -12,7 +12,7 @@ default: &default
 development:
   <<: *default
   database: d46pq7bei7tvpl
- username: jtdpfezyfannnl
+  username: jtdpfezyfannnl
   password: d9e920017d1381547a8f2070bb335932621738754bec0d611f850a03091ba397
 
 # Warning: The database defined as "test" will be erased and
@@ -21,11 +21,11 @@ development:
 test:
   <<: *default
   database: d46pq7bei7tvpl
- username: jtdpfezyfannnl
+  username: jtdpfezyfannnl
   password: d9e920017d1381547a8f2070bb335932621738754bec0d611f850a03091ba397
 
 production:
   <<: *default
   database: d46pq7bei7tvpl
- username: jtdpfezyfannnl
+  username: jtdpfezyfannnl
   password: d9e920017d1381547a8f2070bb335932621738754bec0d611f850a03091ba397
