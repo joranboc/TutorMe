@@ -6,7 +6,7 @@ class StudentsController < ApplicationController
 
     def create
         createUser
-        student = Student.create!(params.permit(:name, :birthDate, :carreer ).merge :user_id => @user.id)       
+        student = Student.create(params.permit(:name, :birthDate, :carreer ).merge :user_id => @user.id)       
         respo = {:create => @response,:student => student}
         json_response(respo, :created)  
     end
